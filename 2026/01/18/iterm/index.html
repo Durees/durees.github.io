@@ -3,7 +3,7 @@
 <html lang="zh-CN, en, it">
 <head>
     <meta charset="utf-8" />
-    <title>Base Knowledge | Chih&#39;s Blog</title>
+    <title>iterm2 美化 | Chih&#39;s Blog</title>
     <meta name="author" content="Chih" />
     <meta name="description" content="" />
     <meta name="keywords" content="建筑历史, 建筑设计, 城市规划, 机器人, 编程" />
@@ -156,49 +156,59 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>Base Knowledge</h1>
+        <h1>iterm2 美化</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2025/12/28
+            2026/1/18
         </span>
         
         
     </div>
     
     <div class="content" v-pre>
-        <h1 id="什么是仿真（Simulation）？"><a href="#什么是仿真（Simulation）？" class="headerlink" title="什么是仿真（Simulation）？"></a>什么是仿真（Simulation）？</h1><p>对现实物理世界（的现象）进行<strong>建模</strong> –&gt; <strong>预测</strong>未来状态</p>
-<span id="more"></span>
-<ul>
-<li>推广到最大：world model （世界模型</li>
-<li>all models are wrong, but some are useful. – George E. P. Box</li>
-</ul>
-<h2 id="建模的本质：求解物理现象的equations"><a href="#建模的本质：求解物理现象的equations" class="headerlink" title="建模的本质：求解物理现象的equations"></a>建模的本质：求解物理现象的equations</h2><pre><code>- function
-- static relation
-- differential equation (动态系统)
+        <span id="more"></span>
+
+<h1 id="iTerm2-美化指南"><a href="#iTerm2-美化指南" class="headerlink" title="iTerm2 美化指南"></a>iTerm2 美化指南</h1><p>好看的终端是会让人有每天使用的冲动，下面是一些 iTerm2 美化的步骤和建议：<br>这里不赘述iterm2的安装，假设你已经安装好了 iTerm2。</p>
+<h2 id="oh-my-zsh-安装"><a href="#oh-my-zsh-安装" class="headerlink" title="oh-my-zsh 安装"></a>oh-my-zsh 安装</h2><p>首先安装 zsh 和 oh-my-zsh：</p>
+<pre><code class="language-bash"># 安装 zsh
+brew install zsh
+# 安装 oh-my-zsh
+sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/oh-my-zsh/master/tools/install.sh)&quot;
 </code></pre>
-<h2 id="ODE-or-PDE"><a href="#ODE-or-PDE" class="headerlink" title="ODE or PDE"></a>ODE or PDE</h2><ul>
-<li>Ordinary Differential Equation (ODE) 常微分方程</li>
-<li>Partial Differential Equation (PDE) 偏微分方程</li>
-</ul>
-<h2 id="IMU-Inertial-Measurement-Unit-惯性测量单元"><a href="#IMU-Inertial-Measurement-Unit-惯性测量单元" class="headerlink" title="IMU (Inertial Measurement Unit) 惯性测量单元"></a>IMU (Inertial Measurement Unit) 惯性测量单元</h2><h2 id="three-pillars-of-a-simulation-仿真的三大支柱"><a href="#three-pillars-of-a-simulation-仿真的三大支柱" class="headerlink" title="three pillars of a simulation (仿真的三大支柱)"></a>three pillars of a simulation (仿真的三大支柱)</h2><ol>
-<li>Constucting the differential equations&#x2F;models(构建微分方程) (ease of use, diversity of environments robot)</li>
-<li>Solving differential equations （解微分方程） (speed and accuracy)</li>
-<li>visualization of the simulation results（可视化仿真结果） (*好看不是重点)</li>
-</ol>
-<p><em>urdf是user与机器人交互的interface(UI)</em></p>
-<p>matlab –&gt; black background</p>
-<h1 id="MuJoCo"><a href="#MuJoCo" class="headerlink" title="MuJoCo"></a>MuJoCo</h1><h2 id="XML-框架和原则，细节看xml-reference"><a href="#XML-框架和原则，细节看xml-reference" class="headerlink" title="XML 框架和原则，细节看xml reference"></a>XML <em>框架和原则，细节看xml reference</em></h2><ul>
-<li><body> 机器人本体 **body frame**
-- <name> 机器人的名称 *option*
-- <pos> 位置
-- <euler> 欧拉角 / <quat> 四元数 / <axisangle> 轴角</li>
-<li><geom> 几何体</li>
-<li><joint> 关节</li>
-<li><inertial> 惯性</li>
+<h2 id="选择主题"><a href="#选择主题" class="headerlink" title="选择主题"></a>选择主题</h2><p>打开 <code>~/.zshrc</code> 文件，找到 <code>ZSH_THEME</code> 变量，将其设置为你喜欢的主题，例如：</p>
+<pre><code class="language-bash">ZSH_THEME=&quot;agnoster&quot;
+</code></pre>
+<p>保存并关闭文件，然后运行以下命令使更改生效：</p>
+<pre><code class="language-bash">source ~/.zshrc
+</code></pre>
+<h2 id="安装-Powerline-字体"><a href="#安装-Powerline-字体" class="headerlink" title="安装 Powerline 字体"></a>安装 Powerline 字体</h2><p>为了让主题显示得更好看，建议安装 Powerline 字体：</p>
+<pre><code class="language-bash">brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+</code></pre>
+<p>安装完成后，打开 iTerm2，进入 <code>Preferences</code> -&gt; <code>Profiles</code> -&gt; <code>Text</code>，将字体设置为刚才安装的 Powerline 字体（例如 <code>Hack Nerd Font</code>）。   </p>
+<h2 id="配置-iTerm2-颜色方案"><a href="#配置-iTerm2-颜色方案" class="headerlink" title="配置 iTerm2 颜色方案"></a>配置 iTerm2 颜色方案</h2><p>你可以从 <a target="_blank" rel="noopener" href="https://iterm2colorschemes.com/">iTerm2 Color Schemes</a> 下载喜欢的颜色方案。下载后，双击 <code>.itermcolors</code> 文件即可导入到 iTerm2 中。然后在 <code>Preferences</code> -&gt; <code>Profiles</code> -&gt; <code>Colors</code> 中选择你导入的颜色方案。</p>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>你可以通过 oh-my-zsh 安装一些有用的插件，例如 <code>zsh-syntax-highlighting</code> 和 <code>zsh-autosuggestions</code>：</p>
+<pre><code class="language-bash#">it clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# 安装 zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions
+    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    ```
+然后在 `~/.zshrc` 文件中添加这些插件：
+```bash
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+</code></pre>
+<p>保存并关闭文件，然后运行以下命令使更改生效：</p>
+<pre><code class="language-bash">source ~/.zshrc
+</code></pre>
+<h2 id="其他建议"><a href="#其他建议" class="headerlink" title="其他建议"></a>其他建议</h2><ul>
+<li>使用 <code>tmux</code> 进行终端分屏和会话管理。# 等我研究会再写一篇 tmux 美化指南。</li>
+<li>自定义提示符，添加 Git 状态显示等信息。</li>
+<li>定期更新 oh-my-zsh 和插件以获取最新功能和修复。</li>
 </ul>
 
     </div>
