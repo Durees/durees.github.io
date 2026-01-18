@@ -181,36 +181,6 @@
         
 
 <div class="post">
-    <a href="/2026/01/18/texture/">
-        <h2 class="post-title"></h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/1/18
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2026/01/18/texture/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
     <a href="/2026/01/18/iterm/">
         <h2 class="post-title">iterm2 美化</h2>
     </a>
@@ -278,6 +248,47 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
         
     </div>
     <a href="/2026/01/18/iterm/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/01/18/texture/">
+        <h2 class="post-title">blender制作texture贴图流程</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/1/18
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <span id="more"></span>
+
+<h1 id="制作texture贴图"><a href="#制作texture贴图" class="headerlink" title="制作texture贴图"></a>制作texture贴图</h1><p>参考别人的方式，我现在摸索的pipeline很基础：Blender展uv -&gt; 插件绘制贴图 –&gt;  导出贴图 -&gt; 在urdf中使用贴图。</p>
+<h2 id="Blender展UV"><a href="#Blender展UV" class="headerlink" title="Blender展UV"></a>Blender展UV</h2><p>使用smart UV project快速展UV。<br>大批量可以使用脚本自动化处理，但是这里就有个大坑<strong>环境配置</strong>，我的常用机器是macOS（谁家SB用mac做3D啊！！！）然后适配linux需要统一环境。</p>
+<p>本质还是我的代码太菜哦。。。</p>
+<p>创建conda环境，调用pip安装blender包</p>
+<h2 id="贴图绘制"><a href="#贴图绘制" class="headerlink" title="贴图绘制"></a>贴图绘制</h2><p>然后使用插件Texture Paint Plus进行贴图绘制。</p>
+<p><strong>但是这个方式不正确！！！</strong><br>正确的方式应该是使用Substance Painter进行贴图绘制，Blender的贴图绘制功能太弱鸡了，尤其是对于PBR贴图的支持。</p>
+<h2 id="导出贴图"><a href="#导出贴图" class="headerlink" title="导出贴图"></a>导出贴图</h2><p>blender有插件在支持<strong>PBR材质编辑器</strong>导出贴图。</p>
+<h1 id="urdf插件"><a href="#urdf插件" class="headerlink" title="urdf插件"></a>urdf插件</h1><p>phobos插件支持blender导出urdf模型。</p>
+<h2 id="替换mesh"><a href="#替换mesh" class="headerlink" title="替换mesh"></a>替换mesh</h2><p>在导出urdf后，支持直接替换obj文件为带贴图的obj文件。<strong>但是必须确保贴图和obj使用同一uv</strong>。</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2026/01/18/texture/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
