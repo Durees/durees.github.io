@@ -3,7 +3,7 @@
 <html lang="zh-CN, en, it">
 <head>
     <meta charset="utf-8" />
-    <title>Archives | Chih&#39;s Blog</title>
+    <title>Blender 平滑mesh设置指南 | Chih&#39;s Blog</title>
     <meta name="author" content="Chih" />
     <meta name="description" content="" />
     <meta name="keywords" content="建筑历史, 建筑设计, 城市规划, 机器人, 编程" />
@@ -37,6 +37,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -150,124 +154,49 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            
-<div id="archives">
-    
-    <div id="timeline-wrap" ref="timeline">
+            <div class="article">
+    <div>
+        <h1>Blender 平滑mesh设置指南</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/3
+        </span>
         
-        <div class="timeline" data-title="helloworld">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/12/26</div>
-                <a href="/2025/12/26/hello-world/">
-                    <h3>Hello World</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="第一个网站">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/12/26</div>
-                <a href="/2025/12/26/%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99/">
-                    <h3>第一个网站</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="baseknowledge">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/12/28</div>
-                <a href="/2025/12/28/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-                    <h3>Base Knowledge</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="mujoco学习笔记">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/12/28</div>
-                <a href="/2025/12/28/mujoco-L1/">
-                    <h3>MuJoCo 学习笔记</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="urdf">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/12/28</div>
-                <a href="/2025/12/28/urdf/">
-                    <h3>urdf</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="blender制作texture贴图流程">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2026/1/18</div>
-                <a href="/2026/01/18/texture/">
-                    <h3>blender制作texture贴图流程</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="iterm2美化">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2026/1/18</div>
-                <a href="/2026/01/18/iterm/">
-                    <h3>iterm2 美化</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="blender平滑mesh设置指南">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2026/2/3</div>
-                <a href="/2026/02/03/blender%20smooth/">
-                    <h3>Blender 平滑mesh设置指南</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
         
     </div>
+    
+    <div class="content" v-pre>
+        <span id="more"></span>
+
+<h1 id="Blender-平滑mesh设置指南"><a href="#Blender-平滑mesh设置指南" class="headerlink" title="Blender 平滑mesh设置指南"></a>Blender 平滑mesh设置指南</h1><ol>
+<li>bevel modifier<ol>
+<li>segment数增加平滑度 &#x3D; 3</li>
+<li>profile数增加平滑度 &#x3D; 1</li>
+</ol>
+</li>
+<li>subdivision surface modifier<ol>
+<li>levels viewport &#x3D; 3</li>
+</ol>
+</li>
+<li>decimate&#x2F;un-subdivide</li>
+</ol>
+<h1 id="高精贴图的方式"><a href="#高精贴图的方式" class="headerlink" title="高精贴图的方式"></a>高精贴图的方式</h1><h1 id="addon"><a href="#addon" class="headerlink" title="addon"></a>addon</h1><ul>
+<li><strong>modifier tools</strong>: 快速添加bevel&#x2F;subdivision modifier 推荐</li>
+<li><strong>mesh machine</strong>: 高级mesh平滑和布尔运算工具 测试中</li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
 </div>
 
             <footer id="footer">
@@ -298,6 +227,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
