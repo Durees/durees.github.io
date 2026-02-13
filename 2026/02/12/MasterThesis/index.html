@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN, en, it">
+<head>
+    <meta charset="utf-8" />
+    <title>硕士论文 | Chih&#39;s Blog</title>
+    <meta name="author" content="Chih" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="建筑历史, 建筑设计, 城市规划, 机器人, 编程" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>CHIH&#39;S BLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;CHIH&#39;S BLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>硕士论文</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/12
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="资料准备"><a href="#资料准备" class="headerlink" title="资料准备"></a>资料准备</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><strong>《用于建筑照明的虚幻引擎:用于建筑设计的真实光线与模拟光之间的方法、局限性与验证》</strong></p>
+<ol>
+<li>今天下载了相关论文和书籍，准备开始阅读和整理资料。</li>
+<li>很多相关论文都是以建筑学的视角进行研究，并不是从工程学的视角出发。</li>
+</ol>
+<h2 id="感触"><a href="#感触" class="headerlink" title="感触"></a>感触</h2><p>这个课题<strong>应该是</strong>对于可持续建筑方向的人的选题，但是对于我的未来职业规划和学习是很符合的。<br>这题目不就是<strong>sim2real</strong>的<strong>gap</strong>问题吗？<br>gemini:<strong>虚拟仿真与实地测量的相关性验证</strong></p>
+<h2 id="相关软件调查"><a href="#相关软件调查" class="headerlink" title="相关软件调查"></a>相关软件调查</h2><p>题目的简介中提到相关软件<strong>Radiance, DIALux, Relux</strong>都是win的。<em>大概率是虚拟机或者desktop&#x2F;surface</em></p>
+<hr>
+<h1 id="照明软件"><a href="#照明软件" class="headerlink" title="照明软件"></a>照明软件</h1><table>
+<thead>
+<tr>
+<th align="center">特性</th>
+<th align="center">Radiance</th>
+<th align="center">DIALux (Evo)</th>
+<th align="center">Relux (Desktop)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">底层算法</td>
+<td align="center">蒙特卡洛反向射线追踪</td>
+<td align="center">放射度 (Radiosity) + 射线追踪</td>
+<td align="center">放射度 (Radiosity) + 射线追踪</td>
+</tr>
+<tr>
+<td align="center">物理精确度</td>
+<td align="center">极高（学术界公认的 Gold Standard）</td>
+<td align="center">高（工程级精确）</td>
+<td align="center">高（工程级精确）</td>
+</tr>
+<tr>
+<td align="center">计算效率</td>
+<td align="center">较慢，依赖参数设置和硬件</td>
+<td align="center">较快，针对实时渲染优化</td>
+<td align="center">较快，适合大规模项目</td>
+</tr>
+<tr>
+<td align="center">操作界面</td>
+<td align="center">主要是命令行（或基于 Honeybee 插件）</td>
+<td align="center">友好、直观的 3D 图形界面</td>
+<td align="center">模块化、商务化的图形界面</td>
+</tr>
+<tr>
+<td align="center">核心用途</td>
+<td align="center">采光分析、复杂建筑几何、学术研究</td>
+<td align="center">室内外通用照明设计、灯具选型</td>
+<td align="center">专业照明方案、隧道&#x2F;运动场&#x2F;道路照明</td>
+</tr>
+</tbody></table>
+<ul>
+<li>在建筑照明的 Sim2Real 工作流中，它们通常处于不同的环节：<ul>
+<li>DIALux&#x2F;Relux： 用于初步选型和合规性验证（比如确保桌面照度达到 300lx）。</li>
+<li>Radiance： 用于深度验证。例如，当你需要分析某个异形幕墙在一年四季中对室内的光热影响时，Radiance 是唯一能给出严谨物理报告的工具。</li>
+<li>Unreal Engine： 用于交互体验和动态感知。它解决了 DIALux 无法提供的“沉浸感”和“实时光影流动”，但它需要参考前三者的数值来校准其物理参数。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="通用渲染方程-Rendering-Equation"><a href="#通用渲染方程-Rendering-Equation" class="headerlink" title="通用渲染方程 (Rendering Equation)"></a>通用渲染方程 (Rendering Equation)</h2><p>$$L_o(x, \omega_o) &#x3D; L_e(x, \omega_o) + \int_{\Omega} f_r(x, \omega_i, \omega_o) L_i(x, \omega_i) (\omega_i \cdot \mathbf{n}) d\omega_i$$</p>
+<ul>
+<li>$L_o$​：出射辐射率 (Outgoing Radiance),观察者在 x 点看到的表面亮度。</li>
+<li>$x$​：表面上的特定点,建筑构件（如墙面、桌面）上的计算点。</li>
+<li>$ω_o$​：出射方向,眼睛或相机观察该点的视线方向。</li>
+<li>$L_e$​：自发光 (Emitted Radiance),灯具、发光槽或 LED 屏幕产生的原生光。</li>
+<li>$∫_Ω$​：半球积分,对该点上方整个半球空间内所有入射光的总和。</li>
+<li>$f_r$​：BRDF (双向反射分布函数),材质属性。决定了光是漫反射（哑光）还是镜面反射（高光）。</li>
+<li>$L_i$​：入射辐射率 (Incoming Radiance),来自天空、其他墙面或灯具反弹过来的光。</li>
+<li>$n$​：法向量,表面的垂直方向。</li>
+<li>$ω_i​⋅n$​：朗伯余弦定律,光线越倾斜，表面的照度越低（cosθ 效应）。</li>
+</ul>
+<h2 id="放射度离散方程-Radiosity-Equation"><a href="#放射度离散方程-Radiosity-Equation" class="headerlink" title="放射度离散方程 (Radiosity Equation)"></a>放射度离散方程 (Radiosity Equation)</h2><p>DIALux&#x2F;Relux 计算的核心逻辑，基于网格划分。<br>$$B_i &#x3D; E_i + \rho_i \sum_{j&#x3D;1}^{N} F_{ij} B_j$$</p>
+<h2 id="蒙特卡洛估计式-Monte-Carlo-Estimator"><a href="#蒙特卡洛估计式-Monte-Carlo-Estimator" class="headerlink" title="蒙特卡洛估计式 (Monte Carlo Estimator)"></a>蒙特卡洛估计式 (Monte Carlo Estimator)</h2><p>Radiance&#x2F;UE5 Path Tracer 使用的统计学逼近方法。<br>$$L_o \approx L_e + \frac{1}{N} \sum_{k&#x3D;1}^{N} \frac{f_r(x, \omega_{i,k}, \omega_o) L_i(x, \omega_{i,k}) \cos \theta_{i,k}}{p(\omega_{i,k})}$$</p>
+<hr>
+<h1 id="UE"><a href="#UE" class="headerlink" title="UE"></a>UE</h1><p>UE的物理引擎是迭代的。之前想着是PhyX会对学习isaacsim有帮助，但是看看具身智能需要考虑光环境么～</p>
+<table>
+<thead>
+<tr>
+<th align="center">版本</th>
+<th align="center">引擎</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">UE1-UE2</td>
+<td align="center">Karma Physics</td>
+</tr>
+<tr>
+<td align="center">UE3-4</td>
+<td align="center">PhyX</td>
+</tr>
+<tr>
+<td align="center">UE5</td>
+<td align="center">Chaos</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="研究逻辑"><a href="#研究逻辑" class="headerlink" title="研究逻辑"></a>研究逻辑</h1><p>相当于要给出一个测试标准（Radiance），然后看UE和Radiance的差距（GAP）在哪里，本质上就是看<strong>算法的差距</strong>，需要一个工具作为尺子来比较两者的差距（<strong>控制变量法</strong>）。</p>
+<h2 id="人工光（Artificial-Lighting）"><a href="#人工光（Artificial-Lighting）" class="headerlink" title="人工光（Artificial Lighting）"></a>人工光（Artificial Lighting）</h2><p>人工光的核心在于**“灯具物理属性的还原”**。</p>
+<ol>
+<li><strong>测试重点</strong>： $L_e$​（光源强度）与 $f_r$​（灯具遮光罩材质）。</li>
+<li>关键验证方式：<ul>
+<li>IES 曲线配光对齐： 验证灯具的非均匀出光。在 UE 中，IES 决定了灯具的光强分布（光子向哪个方向射多少）。</li>
+<li>平方反比定律检测： 验证距离增加时照度（Lux）的衰减。</li>
+<li>眩光测试 (UGR)： 人工光源通常是高亮度小面积点位，验证其在人眼视野中产生的心理不舒适感。</li>
+</ul>
+</li>
+<li>Sim2Real Gap 来源<ul>
+<li>通常在于灯具厂商提供的 IES 文件是否包含灯具表面的反射信息，以及 UE 对 IES 文件增益（Intensity）的解析偏差。</li>
+</ul>
+</li>
+</ol>
+<h2 id="自然采光（Daylighting）"><a href="#自然采光（Daylighting）" class="headerlink" title="自然采光（Daylighting）"></a>自然采光（Daylighting）</h2><p>自然采光的核心在于**“天空模型与大气散射”**。</p>
+<ol>
+<li><p>测试重点： $∫_Ω$​（半球积分）与 $L_i$​（来自天空的入射光）。</p>
+</li>
+<li><p>关键验证方式：</p>
+<ul>
+<li><p>采光系数 (Daylight Factor, DF)： 在全阴天（Overcast Sky）环境下，室内某点的照度与室外无遮挡照度的比值。</p>
+</li>
+<li><p>日光自律性 (DA) 与 空间采光自律性 (sDA)： 验证一年中多长时间内仅靠自然光即可满足照明需求。</p>
+</li>
+<li><p>阴影轨迹验证： 验证直射阳光（Direct Sun）在不同经纬度、不同时刻的投射角度。</p>
+</li>
+</ul>
+</li>
+<li><p>Sim2Real Gap 来源： </p>
+<ul>
+<li>主要在于天空盒模型（Sky Model）。专业软件（如 Radiance）使用的是 CIE 标准天空模型，而 UE 默认的大气系统（Atmosphere Sun &amp; Sky）是基于实时视觉效果优化的，其光谱分布和天光亮度分布可能存在偏差。</li>
+</ul>
+</li>
+</ol>
+<h2 id="Coupled-Simulation"><a href="#Coupled-Simulation" class="headerlink" title="Coupled Simulation"></a>Coupled Simulation</h2><p>在真实建筑中，人工光通常与自然光互补（如光感控制系统）。</p>
+<ol>
+<li>耦合测试方式： 模拟下午 4 点（阳光斜射）且室内灯具开启的混合光环境。</li>
+<li>验证点： 观察色温 (CCT) 的混合效果。自然光（5000K-6500K）与人工光（3000K-4000K）在墙面交汇处的演变，是验证引擎 PBR 色彩科学最严苛的场景。</li>
+</ol>
+<h2 id="测试方式"><a href="#测试方式" class="headerlink" title="测试方式"></a>测试方式</h2><ol>
+<li>底层算法测试（白箱）</li>
+<li>物理属性标定（灰箱）</li>
+<li>视觉与健康指标验证（黑箱）</li>
+<li>以及动态环境测试。</li>
+</ol>
+<h2 id="样本建筑"><a href="#样本建筑" class="headerlink" title="样本建筑"></a>样本建筑</h2><hr>
+<h1 id="Q-A"><a href="#Q-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h1><ol>
+<li>UE版本</li>
+<li>真实光学的选址</li>
+<li>测量光线的相关方法</li>
+</ol>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2025 - 2026 Chih&#39;s Blog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Chih
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
