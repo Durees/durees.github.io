@@ -3,7 +3,7 @@
 <html lang="zh-CN, en, it">
 <head>
     <meta charset="utf-8" />
-    <title> | Chih&#39;s Blog</title>
+    <title>AX6000刷OpenWrt配置lan和wan | Chih&#39;s Blog</title>
     <meta name="author" content="Chih" />
     <meta name="description" content="" />
     <meta name="keywords" content="建筑历史, 建筑设计, 城市规划, 机器人, 编程" />
@@ -156,21 +156,28 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1></h1>
+        <h1>AX6000刷OpenWrt配置lan和wan</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2026/2/16
+            2026/2/13
         </span>
         
         
     </div>
     
     <div class="content" v-pre>
-        
+        <h1 id="AX6000刷OpenWrt后设置错误"><a href="#AX6000刷OpenWrt后设置错误" class="headerlink" title="AX6000刷OpenWrt后设置错误"></a>AX6000刷OpenWrt后设置错误</h1><p>上次接入当地网络，后台设置错误，路由器直接变成“砖”，后台进不去了。</p>
+<span id="more"></span>
+
+<h1 id="修好了"><a href="#修好了" class="headerlink" title="修好了"></a>修好了</h1><p>通过lanscan扫描wifi和端口，发现ipv4没有，route没有，只有个ipv6和mac地址。（wifi至少要能连接上）</p>
+<p>然后，通过ssh连接ipv6接入后台重置+重启，感谢gemini和chatgpt排除问题。<em>之前直接按reset没有效果，怀疑是没有拔掉lan网线</em></p>
+<p>最后，原有的后台ip地址使用默认用户名和密码：root password 进入后台</p>
+<h1 id="配置lan和wan"><a href="#配置lan和wan" class="headerlink" title="配置lan和wan"></a>配置lan和wan</h1><p>现在要配置ronte。问题是上游的路由器是192.168.1.1，openwrt默认使用192.168.1.4作为自己的IP地址。<br><strong>两者都在192.168.1.x网段中，相互冲突。这也就是之前为什么不能正确配置网络的原因。</strong></p>
+
     </div>
     
     
