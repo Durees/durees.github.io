@@ -1,0 +1,26 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+const description = '一个学了建筑干了规划最后打算跑路机器人的建筑师';
+---
+
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<BaseHead title="About - 现代魔术教程" description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>About</h1>
+			<p>一个学了建筑干了规划最后打算跑路机器人的建筑师。</p>
+			<p>
+				这里记录仿真、机器人、3D、Blender、UE、编程相关的学习笔记。
+				改变现实的能力就是幻想的力量。
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
