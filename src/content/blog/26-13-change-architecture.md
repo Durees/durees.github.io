@@ -9,3 +9,6 @@ tags: [Blog, Tech]
 
 # Astro
 CC推荐[Astro](https://astro.build/)，确实好看，一切任务都可以让CC来完成。
+
+# 命令
+一直记不住命令：
